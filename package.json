@@ -1,0 +1,15 @@
+{
+  "name": "fixed-queue-perf-test",
+  "version": "1.0.0",
+  "description": "Test for how much does piscina length fix affects performance",
+  "main": "index.mjs",
+  "scripts": {
+    "bench": "node index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mitata": "^0.1.11"
+  }
+}
