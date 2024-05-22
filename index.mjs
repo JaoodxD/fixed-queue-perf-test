@@ -6,6 +6,21 @@ import NodeQueue from './piscina-fixed-queue.mjs'
 const queues = [PiscinaQueue, NodeQueue]
 const kSize = 2048
 
+
+group('max_size', () => {
+  for (const QueueClass of queues) {
+    bench(QueueClass.name, () => {
+      const queue = new QueueClass()
+      for (let i = 0; i < kSize - 1; i++) {
+        queue.push(i)
+      }
+      for (let i = 0; i < kSize - 1; i++) {
+        queue.shift()
+      }
+    })
+  }
+})
+
 group('max_size + 1', () => {
   for (const QueueClass of queues) {
     bench(QueueClass.name, () => {
